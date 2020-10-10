@@ -146,7 +146,7 @@ class LRUCache {
     }
 }
 ```
-#Comments
+## Comments
  - This is kind of the lazy eviction - it will delete expired key-value pair only when it call the get method. So an improvement is that we can make it eager eviction by implementing another thread removing all expired entries.
  - So here comes the multi-thread scenario where we should use ConcurrentHashMap instead of HashMap in to store the key-value pair.
  - To improve the eviction thread, we can implement a PriorityQueue for the ListNodes to get the expired nodes quickly. eg.
@@ -154,5 +154,5 @@ class LRUCache {
 private PriorityQueue<ListNode> expireQueue = new PriorityQueue<>((a,b)->a.epireTime - b.expireTime);
 ```
 
-##Reference:
+## Reference:
 https://blog.csdn.net/SDDDLLL/article/details/106113970
